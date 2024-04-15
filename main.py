@@ -7,7 +7,7 @@ from clase1 import InventarioTienda
 #se instancia la ventana
 vtn = tk.Tk()
 vtn.geometry('450x150')
-vtn.litle("Tienda")
+vtn.title("Tienda")
 
 #variable donde guarda la txt
 obtieneTxt= str()
@@ -24,7 +24,7 @@ cajaTxt.grid(row=0, column=1, padx=2, pady=5)
 def Ingresar():
     obtieneTxt= cajaTxt.get()
     #el get de la caja va aqui
-    InventarioTienda.almacenarUsuario(usuarioV=obtieneTxt)
+    InventarioTienda.revisarUsuario(usuarioV=obtieneTxt())
     if InventarioTienda==True:
         messagebox.showinfo(message="Ingresar", title="Bienvenido")
     else:
