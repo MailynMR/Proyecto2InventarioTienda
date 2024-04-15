@@ -1,31 +1,38 @@
-from tkinter import tk
-from   tkinter import messagebox, ttk
+from tkinter import * 
+import tkinter as tk
+from tkinter import messagebox
+
 from clase1 import InventarioTienda
+
+#se instancia la ventana
+vtn = tk.Tk()
+vtn.geometry('450x150')
+vtn.title("Tienda")
 
 #variable donde guarda la txt
 obtieneTxt= str()
 
 #se hace la etiqueta de texto
-txtUsuario= tk.Label(text="Ingrese su usuario: ")
+txtUsuario= Label(text="Ingrese su usuario: ")
 txtUsuario.grid(row=0, column=0, padx=5, pady=5)
 
+#se hace la caja de texto 
+obtieneTxt = cajaTxt = Entry(vtn, font="Arial 12")
+cajaTxt.grid(row=0, column=1, padx=2, pady=5) 
+
+#se hace la funcion de ingresar
 def Ingresar():
-    obtieneTxt= txtUsuario.get()
+    obtieneTxt= cajaTxt.get()
     #el get de la caja va aqui
     InventarioTienda.almacenarUsuario(usuarioV=obtieneTxt)
-
-if InventarioTienda==True:
-    messagebox.showinfo(message="¡Hola, mundo!", title="Saludo")
-else:
-    messagebox.showinfo(messagebox="El usuario es incorrecto, intentelo nuevamente.")
+    if InventarioTienda==True:
+        messagebox.showinfo(message="Ingresar", title="Bienvenido")
+    else:
+        messagebox.showinfo(messagebox="El usuario es incorrecto, intentelo nuevamente.", titles="Bienvenido")
         
-
-vtn = tk.Tk()
-vtn.config(width=300, height=200)
-vtn.title("Tienda")
-	
-btnIngresar = ttk.Button(text="Tienda", command=Ingresar)
-btnIngresar.grid(row=2, column=2, padx=5, pady=5)
+#se agregan los botones a utilizar
+btnIngresar = Button(text="Tienda", command=Ingresar)
+btnIngresar.grid(row=0, column=2, padx=5, pady=5)
 
 	
 vtn.mainloop()
