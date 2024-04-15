@@ -7,7 +7,7 @@ from clase1 import InventarioTienda
 #se instancia la ventana
 vtn = tk.Tk()
 vtn.geometry('450x150')
-vtn.title("Tienda")
+vtn.litle("Tienda")
 
 #variable donde guarda la txt
 obtieneTxt= str()
