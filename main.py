@@ -6,8 +6,8 @@ from clase1 import InventarioTienda
 
 #se instancia la ventana
 vtn = tk.Tk()
-vtn.geometry("450x150")
-vtn.title("Tienda")
+vtn.geometry("500x150")
+vtn.title("Inventario Tienda")
 
 #variable donde guarda la txt
 obtieneTxt= str()
@@ -31,28 +31,35 @@ def Ingresar():
     else:
         messagebox.showinfo(message="El usuario es incorrecto, intentelo nuevamente.", title="Bienvenido")
 
- 
-      
 #se agregan los botones a utilizar
-btnIngresar = Button(text="Tienda", command=Ingresar)
+btnIngresar = Button(text="Ingresar", command=Ingresar)
 btnIngresar.grid(row=0, column=2, padx=5, pady=5)
 
-def prueba():
-    messagebox.showinfo(messagebox="Prueba 1", titles="Prueba")
+
+def CreaUsuario():
+    obtieneTxt = cajaTxt.get() # obtiene el txt de la caja 
+    usuario= InventarioTienda.almacenarUsuario(usuarioV=obtieneTxt)
+
+
+btnCrearUsuario = Button(text="Crear usuario", command=CreaUsuario)
+btnCrearUsuario.grid(row=0, column=3, padx=5, pady=5)
+
 
 # se crear la funcion vtn2 para crear otra ventana
 def abrirvtn2():
     ventana2 = Toplevel(vtn)
     ventana2.geometry("450x150")
-    ventana2.title("Inventario Ropa")
+    ventana2.title("Menú Tienda")
     
-    txtInventarioTienda= Label(ventana2,text="INVENTARIO ENTRADA DE LA TIENDA")
-    txtInventarioTienda.grid(row=1, column=0, padx=5, pady=5)
-    btnPrueba= Button(ventana2,text="Prueba", command=prueba)
-    btnPrueba.grid(row=2, column=2, padx=5, pady=5)
-# se crean los label y las cajas de la ventana 2 (vtn2)	
-#se hace la etiqueta de 
+    txtInventarioTienda= Label(ventana2,text="Menú del inventario")
+    txtInventarioTienda.grid(row=1, column=1, padx=5, pady=5)
 
+    
+def abrirvtn3():
+    ventana3 = Toplevel(vtn)
+    ventana3.geometry("450x450")
+    ventana3.title("Inventario")
+    
  
 
 vtn.mainloop()

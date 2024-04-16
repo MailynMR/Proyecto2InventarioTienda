@@ -12,7 +12,7 @@ class InventarioTienda:
         return Database().CrearUsuario(usuarioA)  # es mi arreglo se encuentra vacio
 
     def almacenarUsuario(self, usuarioV):
-        self.usuario = Database().UsuarioViejo(usuarioV)
+        return Database().UsuarioViejo(usuarioV)
 
     # def escribirFichero(self, mensaje): # Escribe un mensaje en un fichero
     #     with open ('Inventario.txt', 'w') as fichero:
