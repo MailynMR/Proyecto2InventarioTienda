@@ -24,12 +24,12 @@ cajaTxt.grid(row=0, column=1, padx=2, pady=5)
 def Ingresar():
     obtieneTxt= cajaTxt.get()
     #el get de la caja va aqui
-    InventarioTienda.revisarUsuario(usuarioV=obtieneTxt)
-    if InventarioTienda==True:  
+    guardaUsuario=InventarioTienda().revisarUsuario(usuarioA=obtieneTxt)
+    if guardaUsuario==True:  
         messagebox.showinfo(message="Ingresar", title="Bienvenido")
-        #vtn2()
+        abrirvtn2()
     else:
-        messagebox.showinfo(messagebox="El usuario es incorrecto, intentelo nuevamente.", titles="Bienvenido")
+        messagebox.showinfo(message="El usuario es incorrecto, intentelo nuevamente.", title="Bienvenido")
 
  
       
@@ -45,15 +45,14 @@ def abrirvtn2():
     ventana2 = Toplevel(vtn)
     ventana2.geometry("450x150")
     ventana2.title("Inventario Ropa")
-
+    
+    txtInventarioTienda= Label(ventana2,text="INVENTARIO ENTRADA DE LA TIENDA")
+    txtInventarioTienda.grid(row=1, column=0, padx=5, pady=5)
+    btnPrueba= Button(ventana2,text="Prueba", command=prueba)
+    btnPrueba.grid(row=2, column=2, padx=5, pady=5)
 # se crean los label y las cajas de la ventana 2 (vtn2)	
 #se hace la etiqueta de 
 
-txtInventarioTienda= Label(text="INVENTARIO ENTRADA DE LA TIENDA")
-txtInventarioTienda.grid(row=1, column=0, padx=5, pady=5)
-btnPrueba= Button(text="Prueba", command=prueba)
-    
-btnVnt2= Button(text="Vtn2", command=abrirvtn2)
-btnVnt2.grid(row=0, column=3, padx=5, pady=5)
+ 
 
 vtn.mainloop()
