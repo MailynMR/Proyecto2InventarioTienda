@@ -40,25 +40,72 @@ def CreaUsuario():
     obtieneTxt = cajaTxt.get() # obtiene el txt de la caja 
     usuario= InventarioTienda.almacenarUsuario(usuarioV=obtieneTxt)
 
-
+#son de los botones de la ventana 1
 btnCrearUsuario = Button(text="Crear usuario", command=CreaUsuario)
 btnCrearUsuario.grid(row=0, column=3, padx=5, pady=5)
-
 
 # se crear la funcion vtn2 para crear otra ventana
 def abrirvtn2():
     ventana2 = Toplevel(vtn)
     ventana2.geometry("450x150")
     ventana2.title("Menú Tienda")
-    
+    #Se agrega el titulo del menu
     txtInventarioTienda= Label(ventana2,text="Menú del inventario")
-    txtInventarioTienda.grid(row=1, column=1, padx=5, pady=5)
-
+    txtInventarioTienda.grid(row=1, column=0, padx=10, pady=10)
+    #Se agregan las opciones del menu (guardar, modificar, eliminar)
+    #Se agregar el boton de guardar
+    btnGuardar= Button(ventana2,text="Guardar",command=Guardar)
+    btnGuardar.grid(row=2, column=0, padx=5, pady=5)
+    #Se agregar el boton de modificar
+    btnModificar= Button(ventana2,text="Modificar",command=Modificar)
+    btnModificar.grid(row=2, column=1, padx=10, pady=10)
+    #Se agregar el boton de eliminar
+    btnEliminar= Button(ventana2,text="Eliminar",command=Eliminar)
+    btnEliminar.grid(row=2, column=3, padx=10, pady=10)
+    
     
 def abrirvtn3():
-    ventana3 = Toplevel(vtn)
+    ventana3 = Toplevel(abrirvtn2)
     ventana3.geometry("450x450")
     ventana3.title("Inventario")
+    
+#funcion de guardar los datos del inventario
+def Guardar():
+    messagebox.showinfo(message="Se guardo exitosamente", title="Guardar")
+   
+    #se agregan todo los datos para guardar
+    txtTitulo= Label(abrirvtn3,text="Inventario entrada de la tienda")
+    txtTitulo.grid(row=0, column=0, padx=10, pady=10)
+    
+    #txt de codigo
+    txtCodigo= Label(abrirvtn3,text="Código: ")
+    txtCodigo.grid(row=0, column=1, padx=10, pady=10)
+    #txt de codigo
+    txtNombreProducto= Label(abrirvtn3,text="Nombre del Producto: ")
+    txtNombreProducto.grid(row=0, column=2, padx=10, pady=10)
+    #txt de Talla
+    txtTalla= Label(abrirvtn3,text="Talla: ")
+    txtTalla.grid(row=0, column=3, padx=10, pady=10)
+    #txt de Cantidad
+    txtCantidad= Label(abrirvtn3,text="Cantidad: ")
+    txtCantidad.grid(row=0, column=4, padx=10, pady=10)
+    #txt de Precio c/u
+    txtPrecioCu= Label(abrirvtn3,text="Precio C/U: ")
+    txtPrecioCu.grid(row=0, column=5, padx=10, pady=10)
+    #txt de PrecioTotal
+    txtPrecioTotal= Label(abrirvtn3,text="Precio Total: ")
+    txtPrecioTotal.grid(row=0, column=6, padx=10, pady=10)
+    
+
+#funcion de modificar los datos del inventario
+def Modificar():
+    messagebox.showinfo(message="Se modifico exitosamente", title="Modificar")
+
+#funcion de eliminar los datos del inventario
+def Eliminar():
+    messagebox.showinfo(message="Se elimino exitosamente", title="Eliminar")
+
+
     
  
 
