@@ -49,6 +49,8 @@ def abrirvtn2():
     ventana2 = Toplevel(vtn)
     ventana2.geometry("450x150")
     ventana2.title("Menú Tienda")
+    
+    
     #Se agrega el titulo del menu
     txtInventarioTienda= Label(ventana2,text="Menú del inventario")
     txtInventarioTienda.grid(row=1, column=0, padx=10, pady=10)
