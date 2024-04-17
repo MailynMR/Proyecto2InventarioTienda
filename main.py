@@ -11,6 +11,16 @@ vtn.title("Inventario Tienda")
 
 #variable donde guarda la txt
 obtieneTxt= str()
+obtieneUsuario = str()
+obtieneCodigo = str()
+obtieneNombreProducto = str()
+obtieneTalla = str()
+obtieneCantidad = int()
+obtienePrecioUnidad = int()
+obtienePrecioTotal = float()
+obtieneDescuento = float()
+obtieneprecioTotalconDesc = float()
+
 
 #se hace la etiqueta de texto
 txtUsuario= Label(text="Ingrese su usuario: ")
@@ -97,6 +107,9 @@ def abrirvtn3():
     txtTotalConDescuento= Label(ventana3,text="Total Con Descuento: ")
     txtTotalConDescuento.grid(row=8, column=0, padx=10, pady=10)
 
+    btnCofirmar = Button(ventana3, text="Aceptar", command= Aceptar )
+    btnCofirmar.grid(row=9, column=2, padx=10, pady=10)
+
 # se crear la funcion vtn4 para crear otra ventana donde esta para rellenar
 def abrirvtn4():  
     ventana4 = Toplevel(vtn)
@@ -134,12 +147,14 @@ def abrirvtn4():
     btnModifica = Button(ventana4,text="Modificar", command=Aceptar())
     btnModifica.grid(row=9, column=1, padx=5, pady=5)
 
+#funcion que se usa en abrirvtn4
 def Aceptar():
+    
+    messagebox.showinfo(message="Se guardo exitosamente", title="Guardar")
     pass
 
 #funcion de guardar los datos del inventario
 def Guardar():
-    messagebox.showinfo(message="Se guardo exitosamente", title="Guardar")
     abrirvtn3()
 #funcion de modificar los datos del inventario
 def Modificar():
