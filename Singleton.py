@@ -1,5 +1,5 @@
 from Perfil import Perfil
-
+from Registro import Registro
 
 class SingletonMeta(type):
     _instances = {}
@@ -38,11 +38,27 @@ class Database(metaclass=SingletonMeta):
                 return True
         return False
 
-    def CrearTzt
+    def CrearTxtGuardar(self,c):
+        
+        
+        
+        pass
 
     def __init__(self):
         self.usuarios = []  # arreglo
         nuevoUsuario = Perfil()
         nuevoUsuario.nombre = "Mailyn"
         self.usuarios.append(nuevoUsuario)
-    # self.registro.crearProducto = [] # matriz
+        
+        self.producto=[] #matriz
+        nuevoProducto= Registro()
+        nuevoProducto.codigo= "1238910"
+        nuevoProducto.nombreProducto= "Camisa"
+        nuevoProducto.talla= "s"
+        nuevoProducto.cantidad= 1
+        nuevoProducto.precioUnidad= 4500
+        nuevoProducto.precioTotal= 4500
+        nuevoProducto.descuento= nuevoProducto.cantidad*0.05
+        nuevoProducto.precioTotalconDesc= nuevoProducto.precioTotal+nuevoProducto.descuento
+        
+        self.producto.append(nuevoProducto)

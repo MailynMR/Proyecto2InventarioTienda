@@ -4,7 +4,6 @@ class Registro:
 
     # se inicializan las variables con cada una de sus tipos de entrada
     def __init__(self):
-        self.usuario = str()
         self.codigo = str()
         self.nombreProducto = str()
         self.talla = str()
@@ -14,8 +13,9 @@ class Registro:
         self.descuento = float()
         self.precioTotalconDesc = float()
 
-    def crearProducto(self, codigo, nombreProducto, talla, cantidad, precioUnidad, precioTotal, descuento,
-                      precioTotalconDesc):
+    def crearProducto(self, codigo, nombreProducto, talla, cantidad, 
+                      precioUnidad, precioTotal, descuento,precioTotalconDesc):
+        
         self.codigo = codigo
         self.nombreProducto = nombreProducto
         self.talla = talla

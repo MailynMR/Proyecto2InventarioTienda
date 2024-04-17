@@ -14,6 +14,11 @@ class InventarioTienda:
     def almacenarUsuario(self, usuarioV):
         return Database().UsuarioViejo(usuarioV)
 
+    def creaInventarioTxt(self, codigo, nombreProducto, talla, cantidad, 
+                      precioUnidad, precioTotal, descuento,precioTotalconDesc):
+        pass
+    
+
     # def escribirFichero(self, mensaje): # Escribe un mensaje en un fichero
     #     with open ('Inventario.txt', 'w') as fichero:
     #         fichero.write(mensaje)
