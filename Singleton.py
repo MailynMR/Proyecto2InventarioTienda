@@ -36,8 +36,9 @@ class Database(metaclass=SingletonMeta):
         for x in self.usuarios:
             if (x.nombre == usuario.nombre):
                 return True
-
         return False
+
+    def CrearTzt
 
     def __init__(self):
         self.usuarios = []  # arreglo

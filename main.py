@@ -183,8 +183,7 @@ def abrirvtn4():
 
 #funcion que se usa en abrirvtn4
 def Aceptar():
-    messagebox.showinfo(message="Se guardo exitosamente", title="Guardar")
-    pass
+    messagebox.showinfo(message="Se realizo exitosamente", title="Aceptar")
 
 #funcion de guardar los datos del inventario
 def Guardar():
@@ -192,9 +191,9 @@ def Guardar():
 #funcion de modificar los datos del inventario
 def Modificar():
     messagebox.showinfo(message="Se modifico exitosamente", title="Modificar")
-    abrirvtn4()
+    abrirvtn3()
 #funcion de eliminar los datos del inventario
 def Eliminar():
     messagebox.showinfo(message="Se elimino exitosamente", title="Eliminar")
-
+    abrirvtn3()
 vtn.mainloop()
