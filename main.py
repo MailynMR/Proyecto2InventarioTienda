@@ -12,14 +12,11 @@ vtn.title("Inventario Tienda")
 #variable donde guarda la txt
 obtieneTxt= str()
 obtieneUsuario = str()
-obtieneCodigo = str()
+obtieneCodigo = int()
 obtieneNombreProducto = str()
 obtieneTalla = str()
 obtieneCantidad = int()
-obtienePrecioUnidad = int()
-obtienePrecioTotal = float()
-obtieneDescuento = float()
-obtieneprecioTotalconDesc = float()
+obtienePrecioUnidad = float()
 
 
 #se hace la etiqueta de texto

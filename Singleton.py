@@ -38,16 +38,29 @@ class Database(metaclass=SingletonMeta):
                 return True
         return False
 
-    def CrearTxtGuardar(self,c):
+    def CrearTxtGuardar(self, codigo, nombreProducto, talla, cantidad, precioUnidad):
+        producto= Registro()
+        producto.codigo=codigo, 
+        producto.nombreProducto=nombreProducto,
+        producto.talla= talla,
+        producto.cantidad=cantidad,
+        producto.precioUnidad=precioUnidad,
         
-        
-        
-        pass
+        fichero = open("Inventario.txt",'a')
+        if(self.producto==""):
+            fichero.append(producto)
+            return True
+        else:
+            print("No se registro")
+            return False
+    
+    
 
     def __init__(self):
         self.usuarios = []  # arreglo
         nuevoUsuario = Perfil()
         nuevoUsuario.nombre = "Mailyn"
+        
         self.usuarios.append(nuevoUsuario)
         
         self.producto=[] #matriz
