@@ -40,17 +40,23 @@ class Database(metaclass=SingletonMeta):
 
     def CrearTxtGuardar(self, codigo, nombreProducto, talla, cantidad, precioUnidad):
         producto= Registro()
-        producto.codigo=codigo, 
-        producto.nombreProducto=nombreProducto,
-        producto.talla= talla,
-        producto.cantidad=cantidad,
-        producto.precioUnidad=precioUnidad,
+        producto.codigo=codigo
+        producto.nombreProducto=nombreProducto
+        producto.talla= talla
+        producto.cantidad=cantidad
+        producto.precioUnidad=precioUnidad
         
         #se abre el fichero o archivo txt para guardar
         fichero = open("Inventario.txt",'a')
         try:
             #se abre el archivo y se escribe con write
-            fichero.write(producto)
+            fichero.write(producto.codigo)
+            fichero.write("\n")
+            fichero.write(producto.nombreProducto)
+            fichero.write(producto.talla)
+            fichero.write(producto.cantidad)
+            fichero.write(producto.precioUnidad)
+            
             print("REVISAR EL ARCHIVO DE TEXTO")
         finally:
             #se cierra el archivo con close

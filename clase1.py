@@ -15,7 +15,7 @@ class InventarioTienda:
         return Database().UsuarioViejo(usuarioV)
 
     def txtGuardar(self, codigo, nombreProducto, talla, cantidad, precioUnidad):
-        return Database.CrearTxtGuardar(codigo, nombreProducto,talla,cantidad,precioUnidad)
+        return Database().CrearTxtGuardar(codigo, nombreProducto,talla,cantidad,precioUnidad)
     
 
     # def escribirFichero(self, mensaje): # Escribe un mensaje en un fichero
