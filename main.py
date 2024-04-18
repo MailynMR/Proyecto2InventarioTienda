@@ -94,7 +94,6 @@ def abrirvtn3():
     obtieneCodigo = cajaTxtCodigo = Entry(ventana3, font="Arial 12")
     cajaTxtCodigo.grid(row=2, column=1, padx=2, pady=5) 
     
-    
     #txt de Talla
     txtTalla= Label(ventana3,text="Talla: ")
     txtTalla.grid(row=3, column=0, padx=10, pady=10)
@@ -136,52 +135,25 @@ def abrirvtn3():
     #se agrega la caja que almacena el dato de talla
     obtieneprecioTotalconDesc = cajaTxtTotalConDescuento = Entry(ventana3, font="Arial 12")
     cajaTxtTotalConDescuento.grid(row=8, column=1, padx=2, pady=5) 
-     
 
+
+     
     btnCofirmar = Button(ventana3, text="Aceptar", command= Aceptar )
     btnCofirmar.grid(row=9, column=2, padx=10, pady=10)
 
-# se crear la funcion vtn4 para crear otra ventana donde esta para rellenar
-def abrirvtn4():  
-    ventana4 = Toplevel(vtn)
-    ventana4.geometry("450x450")
-    ventana4.title("Inventario")
-    
-    #se agregan todo los datos para guardar
-    txtTitulo= Label(ventana4,text="Inventario entrada de la tienda")
-    txtTitulo.grid(row=0, column=0, padx=10, pady=10)
-    #txt de codigo
-    txtCodigo= Label(ventana4,text="Código: ")
-    txtCodigo.grid(row=1, column=0, padx=10, pady=10)
-    #txt de codigo
-    txtNombreProducto= Label(ventana4,text="Nombre del Producto: ")
-    txtNombreProducto.grid(row=2, column=0, padx=10, pady=10)
-    #txt de Talla
-    txtTalla= Label(ventana4,text="Talla: ")
-    txtTalla.grid(row=3, column=0, padx=10, pady=10)
-    #txt de Cantidad
-    txtCantidad= Label(ventana4,text="Cantidad: ")
-    txtCantidad.grid(row=4, column=0, padx=10, pady=10)
-    #txt de Precio c/u
-    txtPrecioCu= Label(ventana4,text="Precio C/U: ")
-    txtPrecioCu.grid(row=5, column=0, padx=10, pady=10)
-    #txt de PrecioTotal
-    txtPrecioTotal= Label(ventana4,text="Precio Total: ")
-    txtPrecioTotal.grid(row=6, column=0, padx=10, pady=10)
-    #txt de Descuento
-    txtDescuento= Label(ventana4,text="Descuento: ")
-    txtDescuento.grid(row=7, column=0, padx=10, pady=10)
-    #txt de TotalConDescuento
-    txtTotalConDescuento= Label(ventana4,text="Total Con Descuento: ")
-    txtTotalConDescuento.grid(row=8, column=0, padx=10, pady=10)
+    print("muestra codigo obtenido",  int(obtieneCodigo.get()))
 
-    btnModifica = Button(ventana4,text="Modificar", command=Aceptar())
-    btnModifica.grid(row=9, column=1, padx=5, pady=5)
+#funcion que se usa en abrirvtn4 
+# aceptar es para que guarde mi archivo en el txt
+#EJEMPLO
+#def CreaUsuario():
+#    obtieneTxt = cajaTxt.get() # obtiene el txt de la caja 
+#    usuario= InventarioTienda.almacenarUsuario(usuarioV=obtieneTxt)
 
-#funcion que se usa en abrirvtn4
 def Aceptar():
     messagebox.showinfo(message="Se realizo exitosamente", title="Aceptar")
-
+    
+    
 #funcion de guardar los datos del inventario
 def Guardar():
     abrirvtn3()
@@ -193,4 +165,6 @@ def Modificar():
 def Eliminar():
     messagebox.showinfo(message="Se elimino exitosamente", title="Eliminar")
     abrirvtn3()
+    
+    
 vtn.mainloop()

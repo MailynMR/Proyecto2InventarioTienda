@@ -46,14 +46,15 @@ class Database(metaclass=SingletonMeta):
         producto.cantidad=cantidad,
         producto.precioUnidad=precioUnidad,
         
+        #se abre el fichero o archivo txt para guardar
         fichero = open("Inventario.txt",'a')
-        if(self.producto==""):
-            fichero.append(producto)
-            return True
-        else:
-            print("No se registro")
-            return False
-    
+        try:
+            #se abre el archivo y se escribe con write
+            fichero.write('Se agrega la lista del inventario generado',producto)
+            print("REVISAR EL ARCHIVO DE TEXTO")
+        finally:
+            #se cierra el archivo con close
+            fichero.close()
     
 
     def __init__(self):
