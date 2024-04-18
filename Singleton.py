@@ -50,7 +50,7 @@ class Database(metaclass=SingletonMeta):
         fichero = open("Inventario.txt",'a')
         try:
             #se abre el archivo y se escribe con write
-            fichero.write('Se agrega la lista del inventario generado',producto)
+            fichero.write(producto)
             print("REVISAR EL ARCHIVO DE TEXTO")
         finally:
             #se cierra el archivo con close

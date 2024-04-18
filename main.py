@@ -91,8 +91,8 @@ def abrirvtn3():
     txtNombreProducto= Label(ventana3,text="Nombre del Producto: ")
     txtNombreProducto.grid(row=2, column=0, padx=10, pady=10)
     #se agrega la caja que almacena el dato de nombre producto
-    obtieneCodigo = cajaTxtCodigo = Entry(ventana3, font="Arial 12")
-    cajaTxtCodigo.grid(row=2, column=1, padx=2, pady=5) 
+    obtieneNombreProducto= cajaTxtNombreProducto = Entry(ventana3, font="Arial 12")
+    cajaTxtNombreProducto.grid(row=2, column=1, padx=2, pady=5) 
     
     #txt de Talla
     txtTalla= Label(ventana3,text="Talla: ")
@@ -133,26 +133,31 @@ def abrirvtn3():
     txtTotalConDescuento= Label(ventana3,text="Total Con Descuento: ")
     txtTotalConDescuento.grid(row=8, column=0, padx=10, pady=10)
     #se agrega la caja que almacena el dato de talla
-    obtieneprecioTotalconDesc = cajaTxtTotalConDescuento = Entry(ventana3, font="Arial 12")
-    cajaTxtTotalConDescuento.grid(row=8, column=1, padx=2, pady=5) 
-
-
-     
-    btnCofirmar = Button(ventana3, text="Aceptar", command= Aceptar )
+    obtieneprecioTotalconDesc = cajaTxtTotalConDesc = Entry(ventana3, font="Arial 12")
+    cajaTxtTotalConDesc.grid(row=8, column=1, padx=2, pady=5) 
+    
+    btnCofirmar = Button(ventana3, text="Aceptar", command= obtieneCajaTxt )
     btnCofirmar.grid(row=9, column=2, padx=10, pady=10)
 
-    print("muestra codigo obtenido",  int(obtieneCodigo.get()))
-
+    
+def obtieneCajaTxt(self):
+    obtieneCodigo= self.cajaTxtCodigo.get()
+    obtieneNombreProducto= self.cajaTxtNombreProducto.get()
+    obtieneTalla=self.cajaTxtTalla.get()
+    obtieneCantidad=self.cajaTxtCantidad.get()
+    obtienePrecioUnidad=self.cajaTxtPrecioCu.get()
+         
+    self.producto= InventarioTienda.txtGuardar(codigo=obtieneCodigo,nombreProducto=obtieneNombreProducto,
+                                               talla=obtieneTalla,cantidad=obtieneCantidad, 
+                                               precioUnidad=obtienePrecioUnidad)
+    
+    
 #funcion que se usa en abrirvtn4 
 # aceptar es para que guarde mi archivo en el txt
-#EJEMPLO
-#def CreaUsuario():
-#    obtieneTxt = cajaTxt.get() # obtiene el txt de la caja 
-#    usuario= InventarioTienda.almacenarUsuario(usuarioV=obtieneTxt)
 
 def Aceptar():
     messagebox.showinfo(message="Se realizo exitosamente", title="Aceptar")
-    
+    producto=InventarioTienda.txtGuardar()
     
 #funcion de guardar los datos del inventario
 def Guardar():
