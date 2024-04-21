@@ -148,9 +148,11 @@ def abrirvtn3():
         obtienePrecioUnidad= cajaTxtPrecioCu.get()
             
         producto= InventarioTienda().txtGuardar(codigo=obtieneCodigo,nombreProducto=obtieneNombreProducto,
-                                              talla=obtieneTalla,cantidad=obtieneCantidad, 
-                                             precioUnidad=obtienePrecioUnidad)
-        print("Se guarda")
+                                                talla=obtieneTalla,cantidad=obtieneCantidad, 
+                                                precioUnidad=obtienePrecioUnidad)
+        print("Se guarda exitosamente en el documento")
+
+        muestra= InventarioTienda().muestraTxt()
 
     btnCofirmar = Button(ventana3, text="Aceptar", command= obtieneCajaTxt )
     btnCofirmar.grid(row=9, column=2, padx=10, pady=10)
@@ -158,18 +160,104 @@ def abrirvtn3():
     btnLimpiar = Button(ventana3, text="Limpiar", command= limpiarFormulario )
     btnLimpiar.grid(row=9, column=1, padx=10, pady=10)
 
-#funcion que se usa en abrirvtn4 # aceptar es para que guarde mi archivo en el txt
-def Aceptar():
-    messagebox.showinfo(message="Se realizo exitosamente", title="Aceptar")
-    producto=InventarioTienda.txtGuardar()
     
+#funcion que se usa en abrirvtn4 # aceptar es para que guarde mi archivo en el txt
+#def AceptarGuardar():
+#    messagebox.showinfo(message="Se realizo exitosamente", title="Aceptar")
+#   producto=InventarioTienda.txtGuardar()
+def abrirvtn4():
+    ventana4 = Toplevel()
+    ventana4.geometry("450x450")
+    ventana4.title("Inventario")
+    
+    #se agregan todo los datos para guardar
+    txtTitulo= Label(ventana4,text="Inventario entrada de la tienda")
+    txtTitulo.grid(row=0, column=0, padx=10, pady=10)
+    
+    #txt de codigo
+    txtCodigo= Label(ventana4,text="Código: ")
+    txtCodigo.grid(row=1, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de codigo
+    cajaTxtCodigo = Entry(ventana4, font="Arial 12")
+    cajaTxtCodigo.grid(row=1, column=1, padx=2, pady=5) 
+    
+    #txt de Nombre Producto
+    txtNombreProducto= Label(ventana4,text="Nombre del Producto: ")
+    txtNombreProducto.grid(row=2, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de nombre producto
+    cajaTxtNombreProducto = Entry(ventana4, font="Arial 12")
+    cajaTxtNombreProducto.grid(row=2, column=1, padx=2, pady=5) 
+    
+    #txt de Talla
+    txtTalla= Label(ventana4,text="Talla: ")
+    txtTalla.grid(row=3, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de talla
+    cajaTxtTalla = Entry(ventana4, font="Arial 12")
+    cajaTxtTalla.grid(row=3, column=1, padx=2, pady=5) 
+    
+    #txt de Cantidad
+    txtCantidad= Label(ventana4,text="Cantidad: ")
+    txtCantidad.grid(row=4, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de talla
+    cajaTxtCantidad = Entry(ventana4, font="Arial 12")
+    cajaTxtCantidad.grid(row=4, column=1, padx=2, pady=5) 
+        
+    #txt de Precio c/u
+    txtPrecioCu= Label(ventana4,text="Precio C/U: ")
+    txtPrecioCu.grid(row=5, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de talla
+    cajaTxtPrecioCu = Entry(ventana4, font="Arial 12")
+    cajaTxtPrecioCu.grid(row=5, column=1, padx=2, pady=5) 
+     
+    #txt de PrecioTotal
+    txtPrecioTotal= Label(ventana4,text="Precio Total: ")
+    txtPrecioTotal.grid(row=6, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de talla
+    cajaTxtPrecioTotal = Entry(ventana4, font="Arial 12")
+    cajaTxtPrecioTotal.grid(row=6, column=1, padx=2, pady=5) 
+     
+    #txt de Descuento
+    txtDescuento= Label(ventana4,text="Descuento: ")
+    txtDescuento.grid(row=7, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de descuento
+    cajaTxtDescuento = Entry(ventana4, font="Arial 12")
+    cajaTxtDescuento.grid(row=7, column=1, padx=2, pady=5) 
+     
+    #txt de TotalConDescuento
+    txtTotalConDescuento= Label(ventana4,text="Total Con Descuento: ")
+    txtTotalConDescuento.grid(row=8, column=0, padx=10, pady=10)
+    #se agrega la caja que almacena el dato de talla
+    cajaTxtTotalConDesc = Entry(ventana4, font="Arial 12")
+    cajaTxtTotalConDesc.grid(row=8, column=1, padx=2, pady=5) 
+    
+    
+    def obtieneCajaTxt():
+        obtieneCodigo= cajaTxtCodigo.get()
+        obtieneNombreProducto= cajaTxtNombreProducto.get()
+        obtieneTalla= cajaTxtTalla.get()
+        obtieneCantidad= cajaTxtCantidad.get()
+        obtienePrecioUnidad= cajaTxtPrecioCu.get()
+            
+        producto= InventarioTienda().txtModificar(codigo=obtieneCodigo,nombreProducto=obtieneNombreProducto,
+                                                talla=obtieneTalla,cantidad=obtieneCantidad, 
+                                                precioUnidad=obtienePrecioUnidad)
+        print("Se MODIFICO exitosamente en el documento")
+
+    btnCofirmar = Button(ventana4, text="Aceptar", command= obtieneCajaTxt )
+    btnCofirmar.grid(row=9, column=2, padx=10, pady=10)
+    
+    messagebox.showinfo(message="Se modifico exitosamente", title="Modificar")
+
+    btnLimpiar = Button(ventana4, text="Limpiar", command= limpiarFormulario )
+    btnLimpiar.grid(row=9, column=1, padx=10, pady=10) 
+    
+
 #funcion de guardar los datos del inventario
 def Guardar():
     abrirvtn3()
 #funcion de modificar los datos del inventario
 def Modificar():
-    messagebox.showinfo(message="Se modifico exitosamente", title="Modificar")
-    abrirvtn3()
+    abrirvtn4()
 #funcion de eliminar los datos del inventario
 def Eliminar():
     messagebox.showinfo(message="Se elimino exitosamente", title="Eliminar")

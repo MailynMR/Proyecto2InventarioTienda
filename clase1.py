@@ -17,19 +17,6 @@ class InventarioTienda:
     def txtGuardar(self, codigo, nombreProducto, talla, cantidad, precioUnidad):
         return Database().CrearTxtGuardar(codigo, nombreProducto,talla,cantidad,precioUnidad)
     
-
-    # def escribirFichero(self, mensaje): # Escribe un mensaje en un fichero
-    #     with open ('Inventario.txt', 'w') as fichero:
-    #         fichero.write(mensaje)
-
-    # def leefichero()# Leer el mensaje del fichero
-    #     mensaje=""
-    #     with open ('Inventario.txt', 'r') as fichero
-    #     # Borra el contenido del fichero para dejarlo vacío
-    #     f = open ('Inventario.txt', 'w') as fichero
-    #     f.close()
-    #     return mensaje
-
-    # #va en el main
-    # #escribirFichero("Esto es un mensaje")
-    # #print(lee_fichero())
+    def muestraTxt(self):
+        return Database().MuestraTxtGuardado()
+        

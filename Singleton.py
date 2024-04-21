@@ -10,7 +10,6 @@ class SingletonMeta(type):
             cls._instances[cls] = instance
         return cls._instances[cls]
 
-
 class Database(metaclass=SingletonMeta):
     # esta es como una base de datos temporal
 
@@ -20,7 +19,6 @@ class Database(metaclass=SingletonMeta):
             print("Usuario encontrado")
         else:
             print("Usuario no encontrado, intentelo nuevamente.")
-
     # se busca guardar los usuario
     def CrearUsuario(self, usuario):
         nuevoPerfil = Perfil()
@@ -46,6 +44,8 @@ class Database(metaclass=SingletonMeta):
         producto.cantidad=cantidad
         producto.precioUnidad=precioUnidad
         
+        diccionario = { ( producto.codigo) }
+        
         #se abre el fichero o archivo txt para guardar
         fichero = open("Inventario.txt",'a')
         try:
@@ -53,16 +53,27 @@ class Database(metaclass=SingletonMeta):
             fichero.write(producto.codigo)
             fichero.write("\n")
             fichero.write(producto.nombreProducto)
+            fichero.write("\n")
             fichero.write(producto.talla)
+            fichero.write("\n")
             fichero.write(producto.cantidad)
+            fichero.write("\n")
             fichero.write(producto.precioUnidad)
             
             print("REVISAR EL ARCHIVO DE TEXTO")
         finally:
             #se cierra el archivo con close
             fichero.close()
-    
 
+    def MuestraTxtGuardado(self,):
+
+        with open("Inventario.txt") as file_object:
+            leer=file_object.read()
+            print(leer)
+
+
+
+        
     def __init__(self):
         self.usuarios = []  # arreglo
         nuevoUsuario = Perfil()
