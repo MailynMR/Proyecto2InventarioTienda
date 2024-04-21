@@ -1,5 +1,5 @@
-12
-Short
-XL
-2
-100
+Codigo: 3
+Nombre del Producto:Camisa
+Talla: XL
+Cantidad: 100
+Precio por unidad: 500

@@ -44,20 +44,22 @@ class Database(metaclass=SingletonMeta):
         producto.cantidad=cantidad
         producto.precioUnidad=precioUnidad
         
-        diccionario = { ( producto.codigo) }
         
         #se abre el fichero o archivo txt para guardar
+        
         fichero = open("Inventario.txt",'a')
+        fichero.truncate()
         try:
             #se abre el archivo y se escribe con write
+            fichero.write("Codigo: ")
             fichero.write(producto.codigo)
-            fichero.write("\n")
+            fichero.write("\nNombre del Producto:")
             fichero.write(producto.nombreProducto)
-            fichero.write("\n")
+            fichero.write("\nTalla: ")
             fichero.write(producto.talla)
-            fichero.write("\n")
+            fichero.write("\nCantidad: ")
             fichero.write(producto.cantidad)
-            fichero.write("\n")
+            fichero.write("\nPrecio por unidad: ")
             fichero.write(producto.precioUnidad)
             
             print("REVISAR EL ARCHIVO DE TEXTO")
@@ -72,8 +74,6 @@ class Database(metaclass=SingletonMeta):
             print(leer)
 
 
-
-        
     def __init__(self):
         self.usuarios = []  # arreglo
         nuevoUsuario = Perfil()
