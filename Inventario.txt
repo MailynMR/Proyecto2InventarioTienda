@@ -1,15 +1,31 @@
 Codigo: 1
 Nombre del Producto:Camisa
 Talla: S
-Cantidad: 35
-Precio por unidad: 1500
-Codigo: 2
-Nombre del Producto:Short
+Cantidad: 10
+Precio por unidad: 1000
+
+Codigo: 47
+Nombre del Producto:Top
+Talla: S
+Cantidad: 2
+Precio por unidad: 2000
+Codigo: 47
+Nombre del Producto:Top
+Talla: S
+Cantidad: 2
+Precio por unidad: 2000
+Codigo: 5
+Nombre del Producto:Camisa
 Talla: M
-Cantidad: 200
-Precio por unidad: 100
-Codigo: 3
-Nombre del Producto:Jogger
-Talla: L
-Cantidad: 100
+Cantidad: 12
+Precio por unidad: 1000
+Codigo: 12
+Nombre del Producto:Pantalon
+Talla: S
+Cantidad: 10
+Precio por unidad: 2100
+Codigo: 12
+Nombre del Producto:Camisa
+Talla: XS
+Cantidad: 101
 Precio por unidad: 2000

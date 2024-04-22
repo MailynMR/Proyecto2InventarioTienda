@@ -51,11 +51,9 @@ class Database(metaclass=SingletonMeta):
         producto.cantidad=cantidad
         producto.precioUnidad=precioUnidad
         
-        
         #se abre el fichero o archivo txt para guardar
-        
         fichero = open("Inventario.txt",'a')
-        fichero.truncate()
+        
         try:
             #se abre el archivo y se escribe con write
             fichero.write("\nCodigo: ")
@@ -73,11 +71,16 @@ class Database(metaclass=SingletonMeta):
         finally:
             #se cierra el archivo con close
             fichero.close()
-
+            
+            
+#---------Metodo para mostrar los datos guardados en el txt---------
     def MuestraTxtGuardado(self,):
         with open("Inventario.txt") as file_object:
-            leer=file_object.read()
-            print(leer)
+            linea=file_object.read()
+            print(linea)
+
+
+
 
     def __init__(self):
         self.usuarios = []  # arreglo

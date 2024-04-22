@@ -13,8 +13,13 @@ class InventarioTienda:
     def almacenarUsuario(self, usuarioV):
         return Database().UsuarioViejo(usuarioV)
 
+    def nuevoUsuario(self, usuarioN):
+        return Database().UsuarioNuevo(usuarioN)
+
+#        ---------Metodo para guardar los datos en el txt---------
     def txtGuardar(self, codigo, nombreProducto, talla, cantidad, precioUnidad):
         return Database().CrearTxtGuardar(codigo, nombreProducto,talla,cantidad,precioUnidad)
     
-    def nuevoUsuario(self, usuarioN):
-        return Database().UsuarioNuevo(usuarioN)
+    def muestraTxt(self):
+        return Database().MuestraTxtGuardado()
+    

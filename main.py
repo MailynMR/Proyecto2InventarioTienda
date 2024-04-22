@@ -18,9 +18,9 @@ obtieneTalla = str()
 obtieneCantidad = int()
 obtienePrecioUnidad = float()
     
-def limpiarFormulario(self):
-    self.cajaTxtCodigo.delete(0,END)
-    pass
+#def limpiarFormulario(self):
+#   self.cajaTxtCodigo.delete(0,END)
+#    pass
 
 #se hace la etiqueta de texto
 txtUsuario= Label(text="Ingrese su usuario: ")
@@ -157,6 +157,9 @@ def abrirvtn3():
                                               talla=obtieneTalla,cantidad=obtieneCantidad, 
                                              precioUnidad=obtienePrecioUnidad)
         print("Se guarda")
+        
+        muestra= InventarioTienda().muestraTxt()
+        print(muestra)
 
     btnCofirmar = Button(ventana3, text="Aceptar", command= obtieneCajaTxt )
     btnCofirmar.grid(row=9, column=2, padx=10, pady=10)
@@ -174,8 +177,10 @@ def abrirvtn4():
     txtTitulo.grid(row=0, column=0, padx=10, pady=10)
 
 
+
 #funcion de guardar los datos del inventario
 def Guardar():
+    messagebox.showinfo(message="Esta ventana que se abre a continuacion es para guardar datos en el inventario", title="Guardar")
     abrirvtn3()
 #funcion de modificar los datos del inventario
 def Modificar():
