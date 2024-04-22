@@ -14,11 +14,18 @@ class Database(metaclass=SingletonMeta):
     # esta es como una base de datos temporal
 
     # usuario guardado
-    def UsuarioViejo(self, usuario):
-        if usuario in self.registro.usuario:
-            print("Usuario encontrado")
+    def UsuarioNuevo(self, usuario):
+        nuevoUsuario = Perfil()
+        nuevoUsuario.nombre=usuario
+        self.usuarios.append(usuario)
+        if(nuevoUsuario.nombre==usuario):
+            print("El usuario ya se encuentra creado.")
+            return True
         else:
-            print("Usuario no encontrado, intentelo nuevamente.")
+            self.usuarios.append(usuario)
+            print("Se agrego el nuevo usuario: ", usuario)
+            return False
+    
     # se busca guardar los usuario
     def CrearUsuario(self, usuario):
         nuevoPerfil = Perfil()
@@ -51,7 +58,7 @@ class Database(metaclass=SingletonMeta):
         fichero.truncate()
         try:
             #se abre el archivo y se escribe con write
-            fichero.write("Codigo: ")
+            fichero.write("\nCodigo: ")
             fichero.write(producto.codigo)
             fichero.write("\nNombre del Producto:")
             fichero.write(producto.nombreProducto)
@@ -68,11 +75,9 @@ class Database(metaclass=SingletonMeta):
             fichero.close()
 
     def MuestraTxtGuardado(self,):
-
         with open("Inventario.txt") as file_object:
             leer=file_object.read()
             print(leer)
-
 
     def __init__(self):
         self.usuarios = []  # arreglo

@@ -2,7 +2,6 @@
 from Registro import Registro
 from Singleton import Database
 
-
 class InventarioTienda:
 
     def __init__(self):
@@ -17,6 +16,5 @@ class InventarioTienda:
     def txtGuardar(self, codigo, nombreProducto, talla, cantidad, precioUnidad):
         return Database().CrearTxtGuardar(codigo, nombreProducto,talla,cantidad,precioUnidad)
     
-    def muestraTxt(self):
-        return Database().MuestraTxtGuardado()
-        
+    def nuevoUsuario(self, usuarioN):
+        return Database().UsuarioNuevo(usuarioN)
