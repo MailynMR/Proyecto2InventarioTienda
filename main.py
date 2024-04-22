@@ -18,9 +18,9 @@ obtieneTalla = str()
 obtieneCantidad = int()
 obtienePrecioUnidad = float()
     
-#def limpiarFormulario(self):
-#   self.cajaTxtCodigo.delete(0,END)
-#    pass
+def limpiarFormulario(self):
+   self.cajaTxtCodigo.delete(0,END)
+   
 
 #se hace la etiqueta de texto
 txtUsuario= Label(text="Ingrese su usuario: ")
