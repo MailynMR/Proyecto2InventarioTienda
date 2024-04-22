@@ -79,9 +79,6 @@ class Database(metaclass=SingletonMeta):
             linea=file_object.read()
             print(linea)
 
-
-
-
     def __init__(self):
         self.usuarios = []  # arreglo
         nuevoUsuario = Perfil()
